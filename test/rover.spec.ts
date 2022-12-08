@@ -38,7 +38,7 @@ describe('moveforward',  () => {
 });
 
 describe('backoff',  () => {
-  forEach([[0,0, new East(), -1,0, new East()],[0,0, new South(), 0,1, new South()],[0,0,new West(), 1,0, new West()],[0,0, new North(), 0,-1, new North()]]).it('if current rover: %d %d %s, move forward 1 step, then the new rover should be %d %d %s ', (x, y, facing, newX, newY, newfacing) => {
+  forEach([[0,0, new East(), -1,0, new East()],[0,0, new South(), 0,1, new South()],[0,0,new West(), 1,0, new West()],[0,0, new North(), 0,-1, new North()]]).it('if current rover: %d %d %s, backoff 1 step, then the new rover should be %d %d %s ', (x, y, facing, newX, newY, newfacing) => {
     const rover = new Rover(x, y, facing);
     rover.backoff();
     expect(rover.x).to.equal(newX);
